@@ -1,10 +1,10 @@
-🧬 Histological Tissue Classification Using CNNs
+Histological Tissue Classification Using CNNs
 A Comparative Study with Logistic Regression
-📌 Overview
+Overview
 
 This project presents a comparative analysis between a baseline Logistic Regression model and a Convolutional Neural Network (CNN) for multi-class histological tissue image classification. The objective is to evaluate how linear models compare to deep learning approaches when applied to spatially structured medical image data.
 
-🗂 Dataset
+Dataset
 
 Image size: 28 × 28 × 3 (RGB)
 
@@ -30,8 +30,8 @@ Validation set (80/20 split from training)
 
 Independent test set
 
-🛠 Methods
-1️⃣ Baseline Model – Logistic Regression
+Methods
+Baseline Model – Logistic Regression
 
 Images flattened into 1D vectors
 
@@ -45,7 +45,7 @@ Confusion Matrix
 
 Log Loss
 
-2️⃣ Deep Learning Model – CNN
+Deep Learning Model – CNN
 
 Two convolutional layers
 
@@ -67,7 +67,7 @@ Learning rates tested:
 
 0.01
 
-📊 Evaluation Metrics
+Evaluation Metrics
 
 Models were evaluated using:
 
@@ -81,7 +81,7 @@ Confusion Matrices
 
 Learning Curves (Loss vs Epoch, Accuracy vs Epoch)
 
-🔍 Key Results
+Key Results
 Model	Test Accuracy
 Logistic Regression	22.8%
 CNN (lr = 0.001)	77.5%
@@ -106,7 +106,7 @@ The effect of learning rate was systematically evaluated:
 
 This confirms the critical role of hyperparameter tuning in model optimisation.
 
-🧠 Key Insights
+Key Insights
 
 Logistic regression struggles with flattened image representations.
 
@@ -116,13 +116,13 @@ Learning rate significantly impacts convergence behaviour.
 
 Deep learning models are substantially more suitable for medical image classification tasks.
 
-📂 Repository Structure
+Repository Structure
 ├── 14340103_Assignment1.ipynb
 ├── README.md
 └── figures/
     ├── accuracy_comparison.png
     ├── loss_comparison.png
     ├── confusion_matrix.png
-🚀 Conclusion
+Conclusion
 
 This study demonstrates that convolutional neural networks dramatically outperform linear classifiers for histopathological image classification. Proper hyperparameter tuning further enhances performance, highlighting the importance of experimental optimisation in deep learning workflows.
