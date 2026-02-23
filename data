@@ -1,0 +1,22 @@
+The dataset used in this project consists of 28×28 RGB histological tissue images belonging to five classes: adipose, lymphocytes, normal colon mucosa, cancer-associated stroma, and colorectal adenocarcinoma epithelium.
+
+The dataset was provided as part of an academic supervised machine learning course and is not publicly distributed. Therefore, the raw data file is not included in this repository due to licensing and institutional access restrictions.
+  To reproduce the results presented in this project:
+
+Obtain the dataset file Assignment1Data.npz from the official course platform (eLab).
+
+Create a folder named data in the root directory of this repository.
+
+Place the dataset file inside the data/ folder.
+
+Ensure the data loading path in the notebook is set as follows
+  data = np.load("data/Assignment1Data.npz")
+
+  project-root/
+│
+├── data/
+│   └── Assignment1Data.npz
+├── notebooks/
+│   └── Assignment1.ipynb
+├── figures/
+└── README.md
