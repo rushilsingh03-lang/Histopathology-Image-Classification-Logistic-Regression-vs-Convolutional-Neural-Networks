@@ -1,8 +1,25 @@
-Histological Tissue Classification Using CNNs
 A Comparative Study with Logistic Regression
 Overview
 
-This project presents a comparative analysis between a baseline Logistic Regression model and a Convolutional Neural Network (CNN) for multi-class histological tissue image classification. The objective is to evaluate how linear models compare to deep learning approaches when applied to spatially structured medical image data.
+This project presents a comparative analysis between a baseline Logistic Regression model and a Convolutional Neural Network (CNN) for multi-class histological tissue image classification.
+
+The objective is to evaluate how linear models compare to deep learning architectures when applied to spatially structured medical image data.
+
+By contrasting flattened-feature linear classification with convolution-based feature extraction, this study highlights the importance of spatial inductive bias in medical imaging tasks.
+
+Clinical Context
+
+Histopathological tissue classification plays a critical role in the diagnosis of colorectal cancer and related abnormalities. Automated classification systems can support pathologists by:
+
+Reducing diagnostic workload
+
+Improving triage efficiency
+
+Assisting in early detection
+
+Supporting large-scale screening
+
+Understanding which modelling approaches are most appropriate for spatial medical data is essential for building reliable AI-assisted diagnostic tools.
 
 Dataset
 
@@ -10,7 +27,7 @@ Image size: 28 × 28 × 3 (RGB)
 
 Number of classes: 5
 
-Tissue categories:
+Tissue Categories:
 
 Adipose
 
@@ -22,7 +39,7 @@ Cancer-associated stroma
 
 Colorectal adenocarcinoma epithelium
 
-The dataset was split into:
+Data Split:
 
 Training set
 
@@ -30,10 +47,10 @@ Validation set (80/20 split from training)
 
 Independent test set
 
-Methods
-Baseline Model – Logistic Regression
+Methodology
+Baseline Model — Logistic Regression
 
-Images flattened into 1D vectors
+Images flattened into 1D feature vectors
 
 No spatial feature extraction
 
@@ -45,7 +62,11 @@ Confusion Matrix
 
 Log Loss
 
-Deep Learning Model – CNN
+This baseline illustrates the limitations of linear classifiers on spatially structured image data.
+
+Deep Learning Model — Convolutional Neural Network (CNN)
+
+Architecture:
 
 Two convolutional layers
 
@@ -55,11 +76,15 @@ Max pooling
 
 Fully connected output layer
 
-Trained using CrossEntropyLoss and Adam optimizer
+Training details:
 
-Hyperparameter tuning performed on learning rate
+Loss function: CrossEntropyLoss
 
-Learning rates tested:
+Optimizer: Adam
+
+Hyperparameter tuning on learning rate
+
+Learning rates evaluated:
 
 0.00001
 
@@ -67,9 +92,9 @@ Learning rates tested:
 
 0.01
 
-Evaluation Metrics
+📈 Evaluation Metrics
 
-Models were evaluated using:
+Models were assessed using:
 
 Test Accuracy
 
@@ -92,11 +117,11 @@ Logistic Regression: ~1.72
 
 CNN: ~0.40
 
-The CNN significantly outperformed the linear baseline, demonstrating the importance of convolutional architectures for spatial image data.
+The CNN significantly outperformed the linear baseline, demonstrating the importance of convolutional architectures for spatial medical image data.
 
-📈 Hyperparameter Analysis
+Hyperparameter Analysis
 
-The effect of learning rate was systematically evaluated:
+Learning rate sensitivity was systematically evaluated:
 
 0.00001 → Slow convergence, underfitting (~61% validation accuracy)
 
@@ -104,25 +129,73 @@ The effect of learning rate was systematically evaluated:
 
 0.01 → Unstable optimisation (~66% validation accuracy)
 
-This confirms the critical role of hyperparameter tuning in model optimisation.
+This highlights the critical role of hyperparameter tuning in deep learning workflows.
 
-Key Insights
+🔍 Why Logistic Regression Underperforms
 
-Logistic regression struggles with flattened image representations.
+Flattening images removes spatial structure, eliminating:
 
-CNN preserves spatial relationships and captures hierarchical features.
+Local feature relationships
 
-Learning rate significantly impacts convergence behaviour.
+Translation invariance
 
-Deep learning models are substantially more suitable for medical image classification tasks.
+Hierarchical feature learning
+
+As a result, logistic regression fails to capture meaningful patterns inherent to histological imagery.
+
+CNNs, by contrast, preserve spatial locality and learn hierarchical features, making them substantially more suitable for medical image classification tasks.
 
 Repository Structure
-├── 14340103_Assignment1.ipynb
+histopathology-image-classification/
+│
+├── histopathology_classification_pipeline.ipynb
 ├── README.md
 └── figures/
     ├── accuracy_comparison.png
     ├── loss_comparison.png
     ├── confusion_matrix.png
+Tools & Libraries
+
+Python
+
+PyTorch
+
+NumPy
+
+Matplotlib
+
+scikit-learn
+
+Key Skills Demonstrated
+
+Deep learning model development
+
+Baseline model comparison
+
+Hyperparameter optimisation
+
+Experimental evaluation design
+
+Medical image data handling
+
+Performance interpretation
+
+Model validation with an independent test set
+
+Future Improvements
+
+Transfer learning with pretrained architectures (e.g., ResNet)
+
+Data augmentation for improved generalisation
+
+Cross-validation across stratified folds
+
+Model interpretability (Grad-CAM visualisation)
+
+Deployment-ready inference pipeline
+
 Conclusion
 
-This study demonstrates that convolutional neural networks dramatically outperform linear classifiers for histopathological image classification. Proper hyperparameter tuning further enhances performance, highlighting the importance of experimental optimisation in deep learning workflows.
+This study demonstrates that convolutional neural networks dramatically outperform linear classifiers for histopathological image classification. By preserving spatial structure and learning hierarchical features, CNNs provide a substantially more suitable framework for medical imaging tasks.
+
+The project highlights the importance of model selection, hyperparameter tuning, and proper validation strategies in applied healthcare AI.
